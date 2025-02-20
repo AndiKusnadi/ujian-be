@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "master_account_andi", schema = "backoffice")
+@Table(name = "master_account_andi", schema = "ADMIN_BO")
 public class MAccount extends AbsBaseEntity implements Serializable {
 
     @Id

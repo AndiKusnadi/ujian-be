@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "master_user_andi", schema = "backoffice")
+@Table(name = "master_user_andi", schema = "ADMIN_BO")
 public class MUser extends AbsBaseEntity implements Serializable {
 
     @Id

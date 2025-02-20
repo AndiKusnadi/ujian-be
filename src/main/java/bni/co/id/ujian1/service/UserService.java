@@ -27,6 +27,7 @@ public class UserService extends AbsService {
     @Transactional
     public ResponseVO saveUser(MUser pValue) {
         ResponseVO responseVO = new ResponseVO();
+
         responseVO.setStatusCode(FrameworkConstanta.SUCCESS);
         //make sure user tidak ada.
         MUser user = this.userRepository.getUserByName(pValue.getFullName());
