@@ -26,8 +26,8 @@ public class DataInitializer {
     public void initData() {
         log.info("*** >> Initialize data << ***");
         this.createUser();
-
         this.createAccount();
+        log.info("*** >> End of initialize data << ***");
     }
 
     private void createUser() {

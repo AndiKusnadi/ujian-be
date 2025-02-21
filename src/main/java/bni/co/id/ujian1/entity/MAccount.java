@@ -13,12 +13,11 @@ import java.io.Serializable;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "master_account_andi", schema = "ADMIN_BO")
+@Table(name = "master_account_andi", schema = "BACKOFFICE")
 public class MAccount extends AbsBaseEntity implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "master_account_andi_seq", sequenceName = "master_account_andi_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne()

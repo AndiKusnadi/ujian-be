@@ -63,6 +63,21 @@ public class AccountService extends AbsService {
         return response;
     }
 
+    public ResponseVO<AccountUserVO> sumUser(String pUserName) {
+        MUser user = this.userRepository.getUserByName(pUserName);
+        ResponseVO<AccountUserVO> response = new ResponseVO<>();
+        response.setStatusCode(FrameworkConstanta.SUCCESS);
+
+        AccountUserVO accountUserVO = new AccountUserVO();
+        accountUserVO.setFullName(user.getFullName());
+
+        Double balance = this.jdbcTemplate.queryForObject("select sum(balance) as jumlah from master_account_andi where user_id = :userId", new AccountBalance(), user.getId());
+        accountUserVO.setTotalAmount(balance);
+
+        response.setData(accountUserVO);
+        return response;
+    }
+
     private static class AccountBalance implements RowMapper<Double> {
         @Override
         public Double mapRow(ResultSet rs, int rowNum) throws SQLException {
